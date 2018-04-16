@@ -35,7 +35,7 @@ class Controller {
 		 	array(
 			    'title' => $event->discussion->title,
 			    'type' => 'rich',
-			    'description' => $event->discussion->startPost->content,
+			    'description' => substr($event->discussion->startPost->content, 0, 2000),
 			    'url' => app('flarum.config')['url'] . "/d/" . $event->discussion->id,
 			    'timestamp' => date('o-m-d\TH:i:s\Z', $event->discussion->start_time->timestamp),
 			    'author' => array(
